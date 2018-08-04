@@ -3,29 +3,41 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id='body'>
-  <!-- makes a nice container for all the sign in info-->
-  <div id='sign-in-form'>
-    <input type="text" id="email" placeholder="Email">
-    <input type="text" id="password" placeholder='Password'>
-    <button type="button" id="button">Sign In</button>
-  </div>
-  <!-- declares the color text field-->
-  <input type="text" id='unitColor' placeholder='Color'>
-  <!-- contains the push button, x and y cords, and push data fields-->
-  <div id='container1'>
-    <input type="text" id='pushData' placeholder="Data">
-    <input type="text" id='xCord' placeholder="X Cord">
-    <input type="text" id='yCord' placeholder="Y Cord">
-    <button type="button" id="pushButton">Send</button>
-    <p id="coorDisplay"></p>
-  </div>
-  <!-- sign out button, idk why it's in a div, dont ask why-->
-  <div>
-    <button type="button" id='sign-out'>Sign Out</button>
-  </div>
-  <!-- canvas thing, idk, probably not important-->
-  <canvas id='canvas' height="1003px" width="1002px" onclick="onMouseClick(event)"></canvas>
-<!--declares the firebase api and underneath it the jc code-->
-<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+	<!-- makes a nice container for all the sign in info-->
+	<div id='sign-in-form'>
+		<input type="text" id="email" placeholder="Email">
+		<input type="text" id="password" placeholder='Password'>
+		<button type="button" id="button">Sign In</button>
+	</div>
+	<!-- declares the color text field-->
+	<input type="text" id='unitColor' placeholder='Color'>
+	<!-- contains the push button, x and y cords, and push data fields-->
+	<div id='container1'>
+		<input type="text" id='pushData' placeholder="Data">
+		<input type="text" id='xCord' placeholder="X Cord">
+		<input type="text" id='yCord' placeholder="Y Cord">
+		<button type="button" id="pushButton">Send</button>
+		<p id="coorDisplay"></p>
+	</div>
+	<!-- sign out button, idk why it's in a div, dont ask why-->
+	<div>
+		<button type="button" id='sign-out'>Sign Out</button>
+	</div>
+	<!-- canvas thing, idk, probably not important-->
+	<canvas id='canvas' height="1003px" width="1002px" onclick="onMouseClick(event)"></canvas>
+<!--declares the firebase api and underneath it the link to the js page-->
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAbvLLZTe2ch3XaUo8cRrl8HmvFkBh3jzg",
+    authDomain: "microwar-506ca.firebaseapp.com",
+    databaseURL: "https://microwar-506ca.firebaseio.com",
+    projectId: "microwar-506ca",
+    storageBucket: "microwar-506ca.appspot.com",
+    messagingSenderId: "264220848446"
+  };
+  firebase.initializeApp(config);
+</script>
 <script src="main.js"></script>
 </body>
