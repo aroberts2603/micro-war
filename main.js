@@ -96,16 +96,15 @@ function seperation(mainArray){
 //displays to the screen what you feed it, cool
 function dispLoop(values,keys){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	print(values.length)
 	for(i=0;i<values.length;i++) {
 		ctx.fillStyle = databaseVals[i].substr(2,databaseVals[i].length-1);
-		print(databaseVals[i][0],(parseInt(xList[i])*gap-(gap*.8)),(parseInt(yList[i])*gap))
 		ctx.fillText(databaseVals[i][0],(parseInt(xList[i])*gap-(gap*.8)),(parseInt(yList[i])*gap));
 	}
 	gridDraw();
 }
 //creates a function to draw a grid
 function gridDraw(){
+	ctx.fillStyle = 'black';
 	for(i=0;i<canvas.width/multiplier;i++){
 		ctx.fillRect(multiplier+(multiplier*i),0,1,canvas.height);
 	}
@@ -118,8 +117,8 @@ function gridDraw(){
 firebase.auth().onAuthStateChanged(function(user){
 	if(user){
 		databaseRef.on("value", function(snapshot){
-			// extract(snapshot.val());
-			// dispLoop(databaseVals,keyArray);
+			extract(snapshot.val());
+			dispLoop(databaseVals,keyArray);
 			console.log(snapshot.val())
 		});
 	}
